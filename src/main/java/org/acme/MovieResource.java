@@ -46,7 +46,7 @@ public class MovieResource {
     @Path("{id}")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response deleteMovie(
-            @PathParam("id")String id){
+            @PathParam("id")Long id){
         Optional<Movie> movieOptional = movies.stream().filter(movie -> movie.getId().equals(id))
                 .findFirst();
         boolean removed = false;
